@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>DS FED Hire Click Test</title>
+
+		<!-- Bootstrap -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<ul class="button-group row">
+					<li class="col-md-3 col-sm-6 col-xs-12 my-button">
+						<a href="#">
+							<strong>Click</strong>
+							<span>Me</span>
+						</a>
+					</li>
+					<li class="col-md-3 col-sm-6 col-xs-12 my-button">
+						<a href="#">
+							<strong>Click</strong>
+							<span>Me</span>
+						</a>
+					</li>
+					<li class="col-md-3 col-sm-6 col-xs-12 my-button">
+						<a href="#">
+							<strong>Click</strong>
+							<span>Me</span>
+						</a>
+					</li>
+					<li class="col-md-3 col-sm-6 col-xs-12 my-button">
+						<a href="#">
+							<strong>Click</strong>
+							<span>Me</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="container">
+				<h1><span>How many times have the buttons been clicked?</span></h1>
+
+				<!-- Outputed text string should go into div below -->
+				<div class="answer-block">
+					<p id="clickTotal"></p>
+				</div>
+			</div>
+		</main>
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+			// write script here for click counter
+			let clickCount = 0;
+			let clickMessage = 'Number of button clicks: ';
+			let clickMeButton = document.getElementsByClassName('my-button');
+			let totalNumOfClicks = document.getElementById('clickTotal');
+
+			// Vanilla JavaScript solution below
+
+			for (let i = 0; i < clickMeButton.length; i++) {
+        clickMeButton[i].addEventListener("click", function () {
+					clickCount++;
+					totalNumOfClicks.innerHTML = clickMessage + clickCount;
+					event.preventDefault();
+        });
+    	}
+
+			// jQuery solution below
+
+			// $(document).on('click', '.my-button', myCounter);
+
+			// function myCounter() {
+			// 	clickCount++;
+			// 	totalNumOfClicks.innerHTML = clickMessage + clickCount;
+			// 	event.preventDefault();
+			// };
+		</script>
+
+	</body>
+</html>
